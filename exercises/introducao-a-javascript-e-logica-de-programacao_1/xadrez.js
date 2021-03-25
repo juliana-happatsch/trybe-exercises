@@ -29,14 +29,3 @@ switch (lowerCase) {
     default:
         console.log('Peça inválida');
 }
-
-console.log(piece);
-
-/*
-Rei
-Rainha
-Torre
-Bispo
-Cavalo
-Peão
-*/
