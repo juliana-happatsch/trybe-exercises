@@ -1,12 +1,13 @@
-function menorValor(numeros) {
-    let indiceMin = 0;
+function maiorNome(nomes) {
+    let maior = nomes[0];
 
-    for (let i in numeros) {
-        if (numeros[indiceMin] > numeros[i]) {
-            indiceMin = i;
+    for (let i in nomes) {
+        if (maior.length < nomes[i].length) {
+            maior = nomes[i];
         }
     }
-    return indiceMin;
+
+    return maior;
 }
 
-console.log(menorValor([2, 4, 6, 7, 10, 0, -3]));
+console.log(maiorNome(['José', 'Lucas', 'Nádia', 'Fernanda', 'Cairo', 'Joana']));
