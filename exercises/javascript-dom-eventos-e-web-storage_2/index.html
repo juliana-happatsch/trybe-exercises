@@ -57,6 +57,7 @@
 </head>
 <body>
   <script>
+    /* PRIMEIRA PARTE */
       let title = document.createElement('h1')
       title.innerText = 'Exercício 5.2 - JavaScript DOM';
       document.body.appendChild(title);
@@ -89,66 +90,36 @@
 
       let list = document.createElement('ul');
       divRight.appendChild(list);
+      let numbers = ['um', 'dois', 'três', 'quatro', 'cinco', 'seis', 'sete', 'oito', 'nove', 'dez'];
       for (let i = 0; i < 10; i += 1) {
         let listItem = document.createElement('li');
-        switch (i) {
-          case 0:
-            listItem.innerText = 'um';
-            list.appendChild(listItem);
-            break;
-
-          case 1:
-            listItem.innerText = 'dois';
-            list.appendChild(listItem);
-            break;
-
-          case 2:
-            listItem.innerText = 'três';
-            list.appendChild(listItem);
-            break;
-
-          case 3:
-            listItem.innerText = 'quatro';
-            list.appendChild(listItem);
-            break;
-
-          case 4: 
-            listItem.innerText = 'cinco';
-            list.appendChild(listItem);
-            break;
-
-          case 5:
-            listItem.innerText = 'seis';
-            list.appendChild(listItem);
-            break;
-
-          case 6:
-            listItem.innerText = 'sete';
-            list.appendChild(listItem);
-            break;
-
-          case 7:
-            listItem.innerText = 'oito';
-            list.appendChild(listItem);
-            break;
-
-          case 8:
-            listItem.innerText = 'nove';
-            list.appendChild(listItem);
-            break;
-
-          case 9:
-            listItem.innerText = 'dez';
-            list.appendChild(listItem);
-            break;
-        }
+        listItem.innerHTML = numbers[i];
+        list.appendChild(listItem);
       }
 
       for (let i = 0; i < 3; i += 1) {
         let subtitles = document.createElement('h3');
+        subtitles.innerText = 'teste ' + i;
         divMain.appendChild(subtitles);
       }
 
+    /* SEGUNDA PARTE */
+      title.className = 'title';
+      console.log(title.className)
+
+      let subtitlesH3 = document.getElementsByTagName('h3');
+      for (let i = 0; i < 3; i += 1) {
+        subtitlesH3[i].className = 'description';
+      }
+
+      divMain.removeChild(divLeft);
+
+      divRight.style.marginRight = 'auto';
+
+      divCenter.parentElement.style.backgroundColor = 'green';
+
+      list.lastChild.remove();
+      list.lastChild.remove();
   </script>
 </body>
 </html>
