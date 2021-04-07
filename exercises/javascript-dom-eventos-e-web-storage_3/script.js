@@ -117,6 +117,15 @@ function newTask(string) {
     task.innerText = string;
 }
 
+function taskColor(color) {
+    let taskContainer = document.querySelector('.my-tasks');
+    let taskDiv = document.createElement('div');
+
+    taskContainer.appendChild(taskDiv);
+    taskDiv.classList.add('task');
+    taskDiv.style.backgroundColor = color;
+}
+
 dezemberDays();
 createButtonHoliday('Feriados');
 holidayColor();
@@ -125,3 +134,4 @@ fridayText();
 zoomIn();
 zoomOut();
 newTask('cozinhar');
+taskColor('lightgreen');
