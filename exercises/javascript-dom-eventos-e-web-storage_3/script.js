@@ -48,10 +48,22 @@ function dezemberDays() {
 function createButton(string) {
     let buttonContainer = document.querySelector('.buttons-container');
     let button = document.createElement('button');
-    button.id = 'btn-holiday';
+
     buttonContainer.appendChild(button);
+    button.id = 'btn-holiday';
     button.innerText = string;
 }
 
-dezemberDays()
+function holidayColor() {
+    let button = document.getElementById('btn-holiday');
+    let holidays = document.getElementsByClassName('holiday');
+    button.addEventListener('click', function() {
+        for (let i = 0; i < holidays.length; i += 1) {
+            holidays[i].style.backgroundColor = 'rgb(238,238,238)';
+        }
+    })
+}
+
+dezemberDays();
 createButton('Feriados');
+holidayColor();
