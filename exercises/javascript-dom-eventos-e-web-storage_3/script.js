@@ -95,8 +95,24 @@ function fridayText() {
     })
 }
 
+function zoomIn() {
+    let days = document.getElementById('days');
+    days.addEventListener('mouseover', function(event) {
+        event.target.style.fontSize = '25px';
+    });
+}
+
+function zoomOut() {
+    let days = document.getElementById('days');
+    days.addEventListener('mouseout', function(event) {
+        event.target.style.fontSize = '20px';
+    })
+}
+
 dezemberDays();
 createButtonHoliday('Feriados');
 holidayColor();
 createButtonFriday('Sexta-feira');
 fridayText();
+zoomIn();
+zoomOut();
