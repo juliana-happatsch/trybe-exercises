@@ -109,6 +109,14 @@ function zoomOut() {
     })
 }
 
+function newTask(string) {
+    let taskContainer = document.querySelector('.my-tasks');
+    let task = document.createElement('span');
+
+    taskContainer.appendChild(task);
+    task.innerText = string;
+}
+
 dezemberDays();
 createButtonHoliday('Feriados');
 holidayColor();
@@ -116,3 +124,4 @@ createButtonFriday('Sexta-feira');
 fridayText();
 zoomIn();
 zoomOut();
+newTask('cozinhar');
