@@ -45,7 +45,7 @@ function dezemberDays() {
     }
 }
 
-function createButton(string) {
+function createButtonHoliday(string) {
     let buttonContainer = document.querySelector('.buttons-container');
     let button = document.createElement('button');
 
@@ -64,6 +64,16 @@ function holidayColor() {
     })
 }
 
+function createButtonFriday(string) {
+    let buttonContainer = document.querySelector('.buttons-container');
+    let button = document.createElement('button');
+
+    buttonContainer.appendChild(button);
+    button.id = 'btn-friday';
+    button.innerText = string;
+}
+
 dezemberDays();
-createButton('Feriados');
+createButtonHoliday('Feriados');
 holidayColor();
+createButtonFriday('Sexta-feira');
