@@ -66,7 +66,7 @@ function holidayColor() {
                 holidays[i].style.backgroundColor = 'lightgreen';
             }
         }
-    })
+    });
 }
 
 function createButtonFriday(string) {
@@ -92,7 +92,7 @@ function fridayText() {
                 friday[i].innerText = fridayDays[i];
             }
         }
-    })
+    });
 }
 
 function zoomIn() {
@@ -106,7 +106,7 @@ function zoomOut() {
     let days = document.getElementById('days');
     days.addEventListener('mouseout', function(event) {
         event.target.style.fontSize = '20px';
-    })
+    });
 }
 
 function newTask(string) {
@@ -126,6 +126,19 @@ function taskColor(color) {
     taskDiv.style.backgroundColor = color;
 }
 
+function taskSelect() {
+    let selected = document.getElementsByClassName('task selected');
+    let taskDiv = document.querySelector('.task');
+
+    taskDiv.addEventListener('click', function(event) {
+        if (selected.length === 0) {
+            event.target.className = 'task selected';
+        } else {
+            event.target.className = 'task';
+        }
+    });
+}
+
 dezemberDays();
 createButtonHoliday('Feriados');
 holidayColor();
@@ -135,3 +148,4 @@ zoomIn();
 zoomOut();
 newTask('cozinhar');
 taskColor('lightgreen');
+taskSelect();
