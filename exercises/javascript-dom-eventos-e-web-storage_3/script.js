@@ -139,6 +139,53 @@ function taskSelect() {
     });
 }
 
+function taskDayColor() {
+    let days = document.getElementById('days');
+    let selectedTask = document.getElementsByClassName('task selected');
+    let taskDiv = document.querySelector('.task');
+    let taskColor = taskDiv.style.backgroundColor;
+
+    days.addEventListener('click', function(event) {
+        let eventTargetColor = event.target.style.color;
+        if (selectedTask.length > 0 && eventTargetColor !== taskColor) {
+            let color = selectedTask[0].style.backgroundColor;
+            event.target.style.color = color;
+        } else if (eventTargetColor === taskColor && selectedTask.length !== 0) {
+            event.target.style.color = 'rgb(119,119,119)';
+        }
+    })
+    
+}
+
+function appointments() {
+    let input = document.getElementById('task-input');
+    let appointmentList = document.querySelector('.task-list');
+    let button = document.getElementById('btn-add');
+
+    button.addEventListener('click', function() {
+        if (input.value.length === 0) {
+            alert('ERRO: Campo vazio');
+        } else {
+            let appointmentItem = document.createElement('li');
+            appointmentItem.innerText = input.value;
+            appointmentList.appendChild(appointmentItem);
+            input.value = '';
+        }
+    });
+
+    input.addEventListener('keyup', function(event) {
+        if (input.value.length === 0) {
+            alert('ERRO: Campo vazio');
+        } else if (event.keyCode === 13) {
+            let appointmentItem = document.createElement('li');
+            appointmentItem.innerText = input.value;
+      
+            appointmentList.appendChild(appointmentItem);
+            input.value = '';
+        }
+    })
+}
+
 dezemberDays();
 createButtonHoliday('Feriados');
 holidayColor();
@@ -147,5 +194,7 @@ fridayText();
 zoomIn();
 zoomOut();
 newTask('cozinhar');
-taskColor('lightgreen');
+taskColor('pink');
 taskSelect();
+taskDayColor();
+appointments();
