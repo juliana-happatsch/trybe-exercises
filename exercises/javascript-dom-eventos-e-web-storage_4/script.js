@@ -1,51 +1,82 @@
 let body = document.body;
 
-let backgroundInput = document.getElementById('background');
-let backgroundButton = document.getElementById('btn-B');
-
-let fontBackgroundInput = document.getElementById('backgroundFont');
-let fontBackgroundButton = document.getElementById('btn-BF');
-
-let fontSizeInput = document.getElementById('fontSize');
-let fontSizeButton = document.getElementById('btn-FS');
-
-let fontFamilyInput = document.getElementById('fontFamily');
-let fontFamilyButton = document.getElementById('btn-FF');
-
-let lineHeightInput = document.getElementById('lineHeight');
-let lineHeightButton = document.getElementById('btn-LH');
-
 /* FUNCTIONS */ 
-function backgroundColorChange() {
+window.onload = function() {
+  function backgroundColorChange() {
+    let backgroundInput = document.getElementById('background');
+    let backgroundButton = document.getElementById('btn-B');
+
     backgroundButton.addEventListener('click', function() {
-        if (body.style.backgroundColor === 'white') {
-            body.style.backgroundColor = backgroundInput.value;
-        } else {
-            body.style.backgroundColor = 'white'
-        }
+        localStorage.setItem('backgroundColor', backgroundInput.value);
+        body.style.backgroundColor = backgroundInput.value;
     });
-    
-}
 
-function fontColorChange() {
-    fontBackgroundButton.addEventListener('click', function() {
-        if (body.style.color === 'darkslategrey') {
-            body.style.color = fontBackgroundInput.value;
-        } else {
-            body.style.color = 'darkslategrey';
-        }
+    let background = localStorage.getItem('backgroundColor');
+    body.style.backgroundColor = background;
+  }
+
+  function fontColorChange() {
+    let fontColorInput = document.getElementById('fontColor');
+    let fontColorButton = document.getElementById('btn-FC')
+
+    fontColorButton.addEventListener('click', function() {
+      localStorage.setItem('fontColor', fontColorInput.value);
+      body.style.color = fontColorInput.value;
     });
-}
 
-function fontSizeChange() {
+    let color = localStorage.getItem('fontColor');
+    body.style.color = color;
+  }
+
+  function fontSizeChange() {
+    let fontSizeInput = document.getElementById('fontSize');
+    let fontSizeButton = document.getElementById('btn-FS');
+
     fontSizeButton.addEventListener('click', function() {
-        if (body.style.fontSize === '15px') {
-            body.style.fontSize = fontSizeInput.value + 'px';
-        } else {
-            body.style.fontSize = '15px';
-        }
+      localStorage.setItem('fontSize', fontSizeInput.value + 'px');
+      body.style.fontSize = fontSizeInput.value + 'px';
     });
+
+    let fontSize = localStorage.getItem('fontSize');
+    body.style.fontSize = fontSize;
+  }
+
+  function fontFamilyChange() {
+    let fontFamilyInput = document.getElementById('fontFamily');
+    let fontFamilyButton = document.getElementById('btn-FF');
+
+    fontFamilyButton.addEventListener('click', function() {
+      localStorage.setItem('fontFamily', fontFamilyInput.value);
+      body.style.fontFamily = fontFamilyInput.value;
+    });
+
+    let fontFamily = localStorage.getItem('fontFamily');
+    body.style.fontFamily = fontFamily;
+  }
+
+  function lineHeightChange() {
+    let lineHeightInput = document.getElementById('lineHeight');
+    let lineHeightButton = document.getElementById('btn-LH');
+
+    lineHeightButton.addEventListener('click', function() {
+      localStorage.setItem('lineHeight', lineHeightInput.value + 'px');
+      body.style.lineHeight = lineHeightInput.value + 'px';
+    });
+
+    let lineHeight = localStorage.getItem('lineHeight');
+    body.style.lineHeight = lineHeight;
 }
+
+  backgroundColorChange();
+  fontColorChange();
+  fontSizeChange();
+  fontFamilyChange();
+  lineHeightChange();
+}
+
+
+
+/*
 
 function fontFamilyChange() {
     fontFamilyButton.addEventListener('click', function() {
@@ -67,8 +98,7 @@ function lineHeightChange() {
     });
 }
 
-backgroundColorChange()
-fontColorChange()
-fontSizeChange()
-fontFamilyChange()
-lineHeightChange()
+fontColorChange();
+fontSizeChange();
+fontFamilyChange();
+lineHeightChange(); */
