@@ -1,0 +1,41 @@
+body {
+  font-size: 30px;
+  margin: 20px;
+}
+
+h1 {
+  font-size: 35px;
+}
+
+h2 {
+
+}
+
+img {
+  max-width: 100%;
+}
+
+figure {
+  margin: 10px;
+}
+
+@media screen and (min-width: 1000px) {
+  body {
+    background-color: rgb(206, 189, 223);
+    font-size: 26px;
+    margin: 10px;
+  }
+
+  figure {
+    display: inline-block;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  body {
+    background-color: rgb(226, 192, 188);
+    font-size: 20px;
+    margin: 10px;
+    max-width: 85%;
+  }
+}
